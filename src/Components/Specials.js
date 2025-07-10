@@ -3,7 +3,7 @@ import '../App.css'
 import Greek from "../Assets/greek_salad.jpg"
 import Lemon from "../Assets/lemon_dessert.jpg"
 import Bruchetta from "../Assets/bruchetta.jpg"
-import DeliveryIcon from "../Assets/delivery-icon.svg"
+import { MdDeliveryDining } from "react-icons/md";
 
 const specials = [
     {
@@ -42,10 +42,11 @@ function Specials () {
                                 <h4>{dish.name}</h4>
                                 <span className="price">{dish.price}</span>
                             </div>
-                            <p>{dish.description}</p>
+                            <p className="description">{dish.description}</p>
                         </div>
                         <div className="order-delivery">
-                            <span>Order a delivery 🛵</span>
+                            <span><div className="order"><a href="#">
+                                <div>Order a delivery</div> <div><MdDeliveryDining/></div></a></div></span>
                         </div>
                     </div>
                 ))}

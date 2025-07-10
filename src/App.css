@@ -13,6 +13,7 @@
   display: flex;
   list-style: none;
   gap: 1.5rem;
+  font-size: 16pt;
   text-decoration: none;
   color: #495E57;
   font-weight: bold;
@@ -30,7 +31,8 @@
 }
 .hero {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 12rem;
   align-items: center;
   padding: 0.5rem 2rem;
   background-color: #495E57;
@@ -38,6 +40,7 @@
 }
 .hero-content {
   max-width: 50%;
+  width: 400px
 }
 .hero h1 {
   font-size: 3rem;
@@ -52,6 +55,8 @@
 .hero p {
   margin: 1rem 0;
   font-size: 1.2rem;
+  flex-wrap: wrap;
+  font-size: 16pt;
 }
 .hero-button {
   padding: 1rem 2rem;
@@ -64,26 +69,37 @@
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.hero-button:hover {
+  color:#f4ce14;
+  background-color: #384943;
 }
 .hero-image img {
   border-radius: 16px;
   width: 400px;
-  height: auto;
+  height: 500px;
+  object-fit: cover;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+.hero-image img:hover {
+  transform: scale(1.1);
 }
 .specials {
   padding: 2rem 3rem;
-  background-color: rgb(241, 236, 237);
+  background-color: #edefee;
 }
 .specials-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
-  gap: 2rem;
+  gap: 34rem;
 }
 .specials-header h2 {
   font-size: 2rem;
-  color: #495E57;
+  color:#384943;
 }
 .menu-button {
   background-color: #f4ce14;
@@ -98,7 +114,7 @@
 }
 .menu-button:hover {
   background-color: #495E57;
-  color: white;
+  color:#f4ce14;
 }
 .specials-cards {
   display: flex;
@@ -115,6 +131,10 @@
   width: 300px;
   height: auto;
   overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.1);
 }
 .card img {
   width: 100%;
@@ -132,40 +152,49 @@
   align-items: center;
   color:#495E57;
   margin-bottom: 0.5rem;
+  font-size: 18pt;
 }
 .card h4 {
   margin: 0;
-  font-size: 16pt;
+  font-size: 18pt;
   font-weight: bold;
 }
 .price {
   color:#495E57;
-  font-size: 16pt;
+  font-size: 18pt;
   font-weight: bold;
 }
+.description {
+  font-size: 16pt;
+}
 .order-delivery {
+  display: flex;
+  justify-content: space-between;
   margin-top: auto;
   padding: 1rem;
-  display: flex;
-  align-items: center;
-  font-weight: medium;
-  color: #333;
-  cursor: pointer;
-  width: 50%;
-  transition: color 0.3s ease;
+  width: 100%;
 }
-.order-delivery:hover {
-  color: white;
+.order a {
+  text-decoration: none;
+  display: flex;
+  gap: 8rem;
+  color:#495E57;
+  width: 100%;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.order a:hover {
+  color:#f4ce14;
   background-color: #495E57;
 }
 .testimonials-section {
   padding: 4rem 2rem;
-  background-color: #ecf4f4;
+  background-color: #edefee;
   text-align: center;
 }
 .testimonials-heading {
   font-size: 2rem;
-  color: #495E57;
+  color: #384943;
   margin-bottom: 4rem;
 }
 .testimonials-container {
@@ -180,10 +209,15 @@
   width: 200px;
   height: auto;
   text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonials-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(73, 94, 87, 0.5);
 }
 .testimonials-card h4 {
   margin-top: 1rem;
-  font-size: 1.3rem;
+  font-size: 16pt;
   font-weight: bolder;
 }
 .stars {
@@ -196,11 +230,14 @@
   width: 200px;
   height: 250px;
 }
+.tt {
+  font-size: 14pt;
+}
 .about {
   display: flex;
   justify-content: space-between;
   padding: 4rem 2rem;
-  background-color: #495E57;
+  background-color: #edefee;
   gap: 4rem;
   flex-wrap: wrap;
   height: 450px;
@@ -213,19 +250,19 @@
 .about-left h2 {
   font-size: 40px;
   font-weight: bold;
-  color:#f4ce14;
+  color:#384943;
   margin-bottom: 0;
 }
 .about-left h4 {
   font-size: 24px;
-  color: white;
+  color: gray;
   margin-top: 0;
   margin-bottom: 1.5rem;
 }
 .about-left p {
-  font-size: 16px;
+  font-size: 16pt;
   line-height: 1.6;
-  color: white;
+  color: black;
   max-width: 500px;
   margin-bottom: 1rem;
 }
@@ -246,10 +283,80 @@
   top: 0;
   left: 160px;
   z-index: 2;
+  transition: transform 0.3s ease;
+}
+.img1:hover {
+  transform: scale(1.1);
 }
 .img2 {
   top: 120px;
   left: 0;
   z-index: 1;
-  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+.img2:hover {
+  transform: scale(1.1);
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 3rem 2rem;
+  margin-top: auto;
+  color: #384943;
+}
+.logo img {
+  width: 200px;
+  flex: 1;
+  height: auto;
+  margin-right: 1rem;
+  margin-top: 0.7rem;
+  object-fit: contain;
+}
+.copyright{
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-size: 12px;
+  font-weight: light;
+  text-align: center;
+  color: #495E57;
+}
+.footer-section {
+  width:fit-content;
+  min-width: 150px;
+  margin-left: 1rem;
+}
+.footer-section h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0.9rem;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-section li {
+  font-size: 12pt;
+  margin-bottom: 0.75rem;
+}
+.footer-section a{
+  color: #495E57;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-section a:hover {
+  color: #f4ce14;
+}
+.social-icons {
+  display: flex;
+  gap: 2rem;
+  font-size: 30px;
+}
+.social-icons a {
+  color:#495E57;
+  transition: color 0.3s;
+}
+.social-icons a:hover {
+  color:#f4ce14;
 }

@@ -41,7 +41,7 @@ function Testimonials() {
                         <div className='stars'>{'⭐️'.repeat(t.rating)}</div>
                         <img src={t.image} alt={t.name} className='Avatar' />
                         <h4>{t.name}</h4>
-                        <p>{t.text}</p>
+                        <p className='tt'>{t.text}</p>
                     </div>
                 ))}
             </div>
