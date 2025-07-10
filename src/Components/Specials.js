@@ -45,7 +45,7 @@ function Specials () {
                             <p>{dish.description}</p>
                         </div>
                         <div className="order-delivery">
-                            <span>Order a delivery</span>
+                            <span>Order a delivery 🛵</span>
                         </div>
                     </div>
                 ))}
