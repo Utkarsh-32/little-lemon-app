@@ -41,12 +41,13 @@
 }
 .hero h1 {
   font-size: 3rem;
-  margin: 0;
+  margin-bottom: 0;
   color: #f4ce14;
 }
 .hero h2 {
   font-size: 2rem;
-  margin: 0.5rem 0rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
 }
 .hero p {
   margin: 1rem 0;
@@ -159,7 +160,7 @@
 }
 .testimonials-section {
   padding: 4rem 2rem;
-  background-color: #e3efef;
+  background-color: #ecf4f4;
   text-align: center;
 }
 .testimonials-heading {
@@ -194,4 +195,61 @@
 .Avatar {
   width: 200px;
   height: 250px;
+}
+.about {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  background-color: #495E57;
+  gap: 4rem;
+  flex-wrap: wrap;
+  height: 450px;
+}
+.about-left {
+  flex: 1;
+  min-width: 280px;
+  margin-left: 2rem;
+}
+.about-left h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color:#f4ce14;
+  margin-bottom: 0;
+}
+.about-left h4 {
+  font-size: 24px;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+.about-left p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: white;
+  max-width: 500px;
+  margin-bottom: 1rem;
+}
+.about-right {
+  flex: 1;
+  position: relative;
+  min-width: 280px;
+  height: 350px;
+}
+.about-img {
+  width: 280px;
+  height: 350px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  position: absolute;
+}
+.img1 {
+  top: 0;
+  left: 160px;
+  z-index: 2;
+}
+.img2 {
+  top: 120px;
+  left: 0;
+  z-index: 1;
+  margin-bottom: 1rem;
 }
