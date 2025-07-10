@@ -71,7 +71,7 @@
 }
 .specials {
   padding: 2rem 3rem;
-  background-color: rgb(226, 216, 217);
+  background-color: rgb(241, 236, 237);
 }
 .specials-header {
   display: flex;
@@ -82,6 +82,7 @@
 }
 .specials-header h2 {
   font-size: 2rem;
+  color: #495E57;
 }
 .menu-button {
   background-color: #f4ce14;
@@ -128,6 +129,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color:#495E57;
   margin-bottom: 0.5rem;
 }
 .card h4 {
@@ -154,4 +156,42 @@
 .order-delivery:hover {
   color: white;
   background-color: #495E57;
+}
+.testimonials-section {
+  padding: 4rem 2rem;
+  background-color: #e3efef;
+  text-align: center;
+}
+.testimonials-heading {
+  font-size: 2rem;
+  color: #495E57;
+  margin-bottom: 4rem;
+}
+.testimonials-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.testimonials-card {
+  background-color: rgb(246, 249, 249);
+  padding: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  width: 200px;
+  height: auto;
+  text-align: left;
+}
+.testimonials-card h4 {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  font-weight: bolder;
+}
+.stars {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #f4ce14;
+  text-align: center;
+}
+.Avatar {
+  width: 200px;
+  height: 250px;
 }
