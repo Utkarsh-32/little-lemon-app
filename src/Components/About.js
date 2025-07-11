@@ -4,7 +4,7 @@ import restaurant from '../Assets/restaurant.jpg';
 
 function About () {
     return (
-        <section className='about'>
+        <section className='about' id="about">
             <div className='about-left'>
                 <h2>Little Lemon</h2>
                 <h4>Chicago</h4>
