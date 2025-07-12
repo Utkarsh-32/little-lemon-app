@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import '../BookingForm.css';
 import { FaWineGlassAlt } from 'react-icons/fa';
 
-function BookingForm() {
+function BookingForm({availableTimes, dispatch, submitForm}) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [date, setDate] = useState("");
@@ -10,9 +10,23 @@ function BookingForm() {
     const [guests, setGuests] = useState(2);
     const [occasion, setOccasion] = useState("Birthday");
 
+    const handleDateChange = (e) => {
+        const selectedDate = e.target.value;
+        setDate(selectedDate);
+        dispatch({ type: 'UPDATE_TIMES', date: selectedDate})
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(`Booking Confirmed! \n Date: ${date}, Time: ${time}, Guests: ${guests}, Occasion: ${occasion} `);
+        const formData = {
+            name: name,
+            email: email,
+            date: date,
+            time: time,
+            guests: guests,
+            occasion: occasion
+        };
+        submitForm(formData);
     };
 
     return (
@@ -31,22 +45,15 @@ function BookingForm() {
 
             <div className='form-row'>
                <label>When would you like to dine? 📆</label>
-               <input type='date' value={date} onChange={(e) => setDate(e.target.value)} required />
+               <input type='date' value={date} onChange={handleDateChange} required />
             </div>
 
             <div className='form-row'>
                 <label>What time works best for you? ⏰</label>
                 <select value={time} onChange={(e) => setTime(e.target.value)} required >
-                   <option>18:00</option>
-                   <option>18:30</option>
-                   <option>19:00</option>
-                   <option>19:30</option>
-                   <option>20:00</option>
-                   <option>20:30</option>
-                   <option>21:00</option>
-                   <option>21:30</option>
-                   <option>22:00</option>
-                   <option>22:30</option>
+                   {availableTimes.map((timeSlot) => (
+                       <option key={timeSlot} value={timeSlot}>{timeSlot}</option>
+                   ))}
                 </select>
             </div>
 

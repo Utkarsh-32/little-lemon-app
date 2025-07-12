@@ -1,6 +1,7 @@
 import '../App.css';
 import logo from '../Assets/logo.png';
 import { FaFacebook, FaTwitter, FaInstagram, FaCopyright } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function Footer () {
     return (
@@ -12,10 +13,10 @@ function Footer () {
             <div className='footer-section'>
                 <h4>Doormat Navigation</h4>
                 <ul>
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/about'>About Us</Link></li>
                     <li><a href="#">Menu</a></li>
-                    <li><a href="#">Reservations</a></li>
+                    <li><Link to='/booking'>Reservations</Link></li>
                     <li><a href="#">Order Online</a></li>
                     <li><a href="#">Log In</a></li>
                 </ul>

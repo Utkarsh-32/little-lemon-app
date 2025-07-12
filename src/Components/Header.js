@@ -11,7 +11,7 @@ function Header () {
                 <img src={Logo} alt="Little Lemon Logo" className="logo" />
                 <ul className="nav-links">
                     <li><Link to="/">Home</Link></li>
-                    <li><a href='#about'>About</a></li>
+                    <li><Link to='/about'>About Us</Link></li>
                     <li><a href="#">Menu</a></li>
                     <li><Link to="/booking">Reservations</Link></li>
                     <li><a href="#">Order Online</a></li>
