@@ -21,34 +21,59 @@ const specials = [
     {
         name: "Lemon Dessert",
         price: "$5.00",
-        description: "This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
+        description: "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
         image: Lemon
     }
 ]
 
 function Specials () {
+    const handleMenuButtonClick = () => {
+        // Handle menu button click
+        console.log("Menu button clicked");
+    }
+
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            handleMenuButtonClick();
+        }
+    }
+
     return (
-        <section className="specials">
+        <section className="specials" role="region" aria-labelledby="specials-heading">
             <div className="specials-header">
-                <h2>This Week's Specials !!</h2>
-                <button className="menu-button">Online Menu</button>
+                <h2 id="specials-heading">This Week's Specials !!</h2>
+                <button 
+                    className="menu-button" 
+                    onClick={handleMenuButtonClick}
+                    onKeyDown={handleKeyPress}
+                    aria-label="View our complete online menu"
+                >
+                    Online Menu
+                </button>
             </div>
-            <div className="specials-cards">
+            <div className="specials-cards" role="list" aria-label="Weekly special dishes">
                 {specials.map((dish, index) => (
-                    <div className="card" key={index}>
-                        <img src={dish.image} alt={dish.name} />
+                    <article className="card" key={index} role="listitem">
+                        <img src={dish.image} alt={`${dish.name} - ${dish.description}`} />
                         <div className="card-content">
                             <div className="card-header">
                                 <h4>{dish.name}</h4>
-                                <span className="price">{dish.price}</span>
+                                <span className="price" aria-label={`Price: ${dish.price}`}>{dish.price}</span>
                             </div>
                             <p className="description">{dish.description}</p>
                         </div>
                         <div className="order-delivery">
-                            <span><div className="order"><a href="#">
-                                <div>Order a delivery</div> <div><MdDeliveryDining/></div></a></div></span>
+                            <span>
+                                <div className="order">
+                                    <a href="#" aria-label={`Order ${dish.name} for delivery`}>
+                                        <div>Order a delivery</div> 
+                                        <div aria-hidden="true"><MdDeliveryDining/></div>
+                                    </a>
+                                </div>
+                            </span>
                         </div>
-                    </div>
+                    </article>
                 ))}
             </div>
         </section>

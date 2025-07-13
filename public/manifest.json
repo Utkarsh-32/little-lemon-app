@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Little Lemon",
+  "name": "Little Lemon - Mediterranean Restaurant",
+  "description": "Family-owned Mediterranean restaurant in Chicago serving traditional recipes with a modern twist",
   "icons": [
     {
       "src": "favicon.ico",
@@ -16,10 +17,19 @@
       "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#f4ce14",
+  "background_color": "#ffffff",
+  "orientation": "portrait",
+  "categories": ["food", "restaurant", "dining"],
+  "lang": "en",
+  "dir": "ltr"
 }

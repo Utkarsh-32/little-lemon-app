@@ -2,6 +2,90 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+
+/* Accessibility improvements */
+:focus {
+  outline: 3px solid #f4ce14;
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid #f4ce14;
+  outline-offset: 2px;
+}
+
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #495E57;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* SEO and Performance optimizations */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Lazy loading for images */
+.lazy-load {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+}
+
+/* Print styles for better SEO */
+@media print {
+  .navbar,
+  .footer,
+  .hero-button,
+  .menu-button,
+  .booking-form button {
+    display: none !important;
+  }
+  
+  .hero,
+  .specials,
+  .testimonials-section,
+  .about {
+    page-break-inside: avoid;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+}
 .navbar {
   display: flex;
   padding: 1rem 2rem;
@@ -203,6 +287,7 @@
 }
 .testimonials-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
 }
@@ -223,6 +308,7 @@
   margin-top: 1rem;
   font-size: 16pt;
   font-weight: bolder;
+  text-align: center;
 }
 .stars {
   font-size: 1.2rem;
@@ -233,6 +319,10 @@
 .Avatar {
   width: 200px;
   height: 250px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
 .tt {
   font-size: 14pt;
@@ -251,25 +341,31 @@
   min-width: 280px;
   margin-left: 2rem;
 }
-.about-left h2 {
-  font-size: 40px;
-  font-weight: bold;
-  color:#384943;
-  margin-bottom: 0;
-}
-.about-left h4 {
-  font-size: 24px;
-  color: gray;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-}
-.about-left p {
-  font-size: 16pt;
-  line-height: 1.6;
-  color: black;
-  max-width: 500px;
-  margin-bottom: 1rem;
-}
+    .about-left h2 {
+        font-size: 40px;
+        font-weight: bold;
+        color:#384943;
+        margin-bottom: 0;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    .about-left h4 {
+        font-size: 24px;
+        color: gray;
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    .about-left p {
+        font-size: 16pt;
+        line-height: 1.6;
+        color: black;
+        max-width: 500px;
+        margin-bottom: 1rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
 .about-right {
   flex: 1;
   position: relative;
@@ -310,7 +406,7 @@
   color: #384943;
 }
 .logo img {
-  width: 200px;
+  width: 150px;
   flex: 1;
   height: auto;
   margin-right: 1rem;
@@ -366,4 +462,304 @@
 }
 html {
   scroll-behavior: smooth;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        max-width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .nav-links li {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        list-style: none;
+        box-sizing: border-box;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.8rem 1rem;
+        border-radius: 8px;
+        background-color: #f4ce14;
+        color: #495e57;
+        text-decoration: none;
+        font-weight: 600;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Logo adjustments */
+    .logo {
+        max-width: 150px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    /* Hero section adjustments */
+    .hero {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    /* Specials section adjustments */
+    .specials {
+        padding: 1rem;
+    }
+
+    .specials-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .specials-cards {
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    /* Testimonials adjustments */
+    .testimonials-section {
+        padding: 2rem 1rem;
+    }
+
+    .testimonials-container {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .testimonials-card {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    /* About section adjustments */
+    .about {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+        margin-bottom: 2rem; /* Add space before footer */
+        align-items: center;
+    }
+
+    .about-left,
+    .about-right {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .about-left {
+        padding: 0 2rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .about-left h2 {
+        font-size: 2rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .about-left h4 {
+        font-size: 1.5rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .about-left p {
+        font-size: 1rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .about-right {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        height: 350px;
+        margin: 0 auto;
+        background-color: transparent;
+        min-height: 350px;
+    }
+
+    .about-img {
+        width: 200px;
+        height: 250px;
+        object-fit: cover;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        position: absolute;
+        border-radius: 8px;
+    }
+
+    .img1 {
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+        transition: transform 0.3s ease;
+    }
+
+    .img2 {
+        top: 120px;
+        left: 20px;
+        z-index: 1;
+        transition: transform 0.3s ease;
+    }
+
+    /* Footer adjustments */
+    .footer {
+        padding: 1rem;
+        text-align: center;
+        margin-top: 2rem; /* Add space after about section */
+    }
+
+    .footer-section {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.5rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 0.6rem 0.8rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .logo {
+        max-width: 120px;
+        margin: 0 auto;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero h2 {
+        font-size: 1.3rem;
+    }
+
+    .specials-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-header {
+        font-size: 16pt;
+    }
+
+    .description {
+        font-size: 14pt;
+    }
+
+    .testimonials-card {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .about {
+        margin-bottom: 3rem;
+    }
+
+    .about-right {
+        max-width: 300px;
+        height: 300px;
+        min-height: 300px;
+    }
+
+    .about-img {
+        width: 150px;
+        height: 200px;
+    }
+
+    .img1 {
+        top: 10px;
+        right: 10px;
+    }
+
+    .img2 {
+        top: 90px;
+        left: 10px;
+    }
+
+    .footer {
+        margin-top: 3rem;
+    }
 }

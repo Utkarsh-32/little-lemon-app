@@ -6,16 +6,16 @@ import { Link } from "react-router-dom";
 
 function Header () {
     return (
-        <header id="header">
-            <nav className="navbar">
-                <img src={Logo} alt="Little Lemon Logo" className="logo" />
-                <ul className="nav-links">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to='/about'>About Us</Link></li>
-                    <li><a href="#">Menu</a></li>
-                    <li><Link to="/booking">Reservations</Link></li>
-                    <li><a href="#">Order Online</a></li>
-                    <li><a href="#">Login</a></li>
+        <header id="header" role="banner">
+            <nav className="navbar" role="navigation" aria-label="Main navigation">
+                <img src={Logo} alt="Little Lemon Restaurant Logo" className="logo" />
+                <ul className="nav-links" role="menubar">
+                    <li role="none"><Link to="/" role="menuitem" aria-label="Go to home page">Home</Link></li>
+                    <li role="none"><Link to='/about' role="menuitem" aria-label="Learn about Little Lemon restaurant">About Us</Link></li>
+                    <li role="none"><a href="#" role="menuitem" aria-label="View our menu">Menu</a></li>
+                    <li role="none"><Link to="/booking" role="menuitem" aria-label="Make a table reservation">Reservations</Link></li>
+                    <li role="none"><a href="#" role="menuitem" aria-label="Order food online">Order Online</a></li>
+                    <li role="none"><a href="#" role="menuitem" aria-label="Login to your account">Login</a></li>
                 </ul>
             </nav>
         </header>
